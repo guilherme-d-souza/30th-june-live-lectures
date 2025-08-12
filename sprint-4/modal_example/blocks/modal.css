@@ -1,0 +1,48 @@
+.modal {
+  background-color: white;
+  border-radius: 16px;
+  color: black;
+  padding: 30px;
+  max-width: 50%;
+  width: 100%;
+  /* above - only related to position the modal */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  visibility: hidden;
+}
+
+.modal__input {
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  border-radius: 8px;
+  padding: 16px 12px;
+}
+
+.modal__background {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  /* above - only related to position the modal background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.modal-visible {
+  visibility: visible;
+}
+
+/* SELECTING SOMETHING THAT WILL EXISTS */
+.modal__background-visible {
+  display: block;
+}
+
+/* MOBILE */
+@media screen and (max-width: 600px) {
+  .modal {
+    max-width: 80%;
+  }
+}

@@ -1,0 +1,9 @@
+html {
+  --color-light: #000;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 83px);
+  color: var(--color-light);
+}

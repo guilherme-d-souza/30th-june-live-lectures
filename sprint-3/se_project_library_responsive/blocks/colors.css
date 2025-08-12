@@ -1,0 +1,14 @@
+/* REUSE AND SHOULD BE RELATED */
+
+html {
+  --color-primary-text: #1f1f1f;
+  --color-white: #fff;
+  --color-dirty-white: #f2f2f2;
+  --color-light-orange: #e96e3a;
+  --color-dark-orange: #d35722;
+  --color-gray: #838383;
+}
+
+.dark-theme {
+  --color-primary-text: #fff;
+}
