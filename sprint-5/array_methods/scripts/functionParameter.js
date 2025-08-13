@@ -14,6 +14,6 @@ console.log(result); // 180
 
 function forEach(userFunction) {
   for (let index = 0; index < array.length; index++) {
-    return userFunction(array[index]);
+    userFunction(array[index]);
   }
 }
