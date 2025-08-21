@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body>
+    <h1 class="cool-title" id="title">DOM Manipulation</h1>
+    <div class="grocery__banner">
+      <h2>Banner</h2>
+      <button id="alert-button" type="button">Click to show an alert</button>
+    </div>
+    <div class="grocery__area"></div>
+    <ul id="grocery__list"></ul>
+    <!-- ITS NOT RENDER BY DEFAULT -->
+    <template id="grocery-template">
+      <li class="grocery__item">
+        <h3 class="grocery__item-title">Example</h3>
+        <img class="grocery__item-image" src="" alt="" />
+      </li>
+    </template>
+    <script src="./js/moveRemove.js"></script>
+    <!-- <script src="./js/events.js"></script> -->
+    <!-- <script src="./js/template.js"></script> -->
+    <!-- <script src="./js/cloning.js"></script> -->
+  </body>
+</html>

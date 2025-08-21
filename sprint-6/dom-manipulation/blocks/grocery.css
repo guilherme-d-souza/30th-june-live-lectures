@@ -1,0 +1,12 @@
+.grocery__item-image {
+  height: 100px;
+}
+
+.grocery__banner {
+  border: 4px dashed black;
+}
+
+.grocery__area {
+  border: 1px solid black;
+  padding: 20px;
+}
