@@ -1,0 +1,13 @@
+.canva {
+  border: 1px solid #000;
+  width: 400px;
+  height: 400px;
+}
+
+.cool-circle {
+  position: fixed;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: blue;
+}
