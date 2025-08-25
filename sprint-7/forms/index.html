@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form id="phoneForm" action="">
+      <label for="phone-input">
+        Phone
+        <input type="text" name="phone" id="phone-input" />
+      </label>
+      <label for="password">
+        Password
+        <input type="password" name="password" id="password" />
+      </label>
+      <label for="happy">
+        Happy
+        <input type="checkbox" name="happy" id="happy" checked />
+      </label>
+      <select name="numbers" multiple>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <!-- <input type="submit" value="Button" /> -->
+      <button type="submit">Button</button>
+    </form>
+    <div>
+      <div>
+        <div>
+          <button id="fake-button" type="button">Fake Submit Button</button>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/forms.js"></script>
+  </body>
+</html>
