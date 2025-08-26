@@ -1,0 +1,12 @@
+.modal {
+  visibility: hidden;
+}
+
+.modal_is-visible {
+  visibility: visible;
+}
+
+.bg-black {
+  background-color: black;
+  color: white;
+}
