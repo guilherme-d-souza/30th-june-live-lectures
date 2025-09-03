@@ -7,7 +7,7 @@
 async function getBreeds() {
   try {
     // try here
-    const response = await fetch("htts://dogapi.dog/api/v2/breeds"); // this triggers an errors
+    const response = await fetch("htts://dogapi.dog/api/v2/breeds");
     console.log(await response.json());
     console.log("Hello!");
   } catch (error) {
