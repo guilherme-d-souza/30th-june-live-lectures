@@ -1,0 +1,30 @@
+.header {
+  height: 660px;
+  background-color: black;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.header__banner {
+  text-transform: uppercase;
+  color: #ffe247;
+}
+
+.header__overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header__title {
+  font-size: 140px;
+  font-weight: 500;
+  line-height: 132px;
+  letter-spacing: -5.6px;
+  color: #ffe247;
+  text-transform: uppercase;
+  margin: 0 auto 20px;
+  max-width: 1400px;
+  text-align: center;
+}

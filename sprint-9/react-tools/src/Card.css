@@ -1,0 +1,12 @@
+.card {
+  width: 490px;
+  min-height: 440px;
+  background: #ffffff;
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 246px;
+}
