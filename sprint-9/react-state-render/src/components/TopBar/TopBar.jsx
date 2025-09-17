@@ -1,5 +1,5 @@
-import MenuLink from "./MenuLink";
-import Image from "./Image";
+import MenuLink from "../MenuLink";
+import Image from "../Image";
 import "./TopBar.css";
 
 function TopBar() {
