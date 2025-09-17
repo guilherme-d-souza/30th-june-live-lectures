@@ -1,0 +1,19 @@
+.topbar-gray {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: gray;
+}
+
+.nav-user__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-user__list a {
+  color: white;
+  text-decoration: none;
+}
