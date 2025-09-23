@@ -1,0 +1,30 @@
+.profile {
+  display: flex;
+  gap: 22px;
+}
+
+.profile__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile__information_name,
+.profile__information_description {
+  margin: 0;
+}
+
+.profile__avatar {
+  width: 216px;
+  height: 216px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.profile__button {
+  max-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}

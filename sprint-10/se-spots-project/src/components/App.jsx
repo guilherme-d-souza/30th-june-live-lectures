@@ -5,13 +5,28 @@ import { useState } from "react";
 import Header from "./Header";
 import Profile from "./Profile";
 import Modal from "./Modal";
+import { getUserInfo } from "../services/TripleTenAPI";
+import { useEffect } from "react";
+import EditProfileModal from "./EditProfileModal";
 
 function App() {
   //     variable, special function -> triggers the react render
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [avatar, setAvatar] = useState(defaultAvatar);
-  const [name, setName] = useState("Placeholder Name");
-  const [description, setDescription] = useState("Placeholder Description");
+  const [name, setName] = useState("Guilherme");
+  const [description, setDescription] = useState("Software Engineer");
+
+  async function fetchUser() {
+    const user = await getUserInfo();
+    setName(user.name);
+    setDescription(user.about);
+    setAvatar(user.avatar);
+  }
+
+  // useEffect
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   const handleOpenEditProfileModal = () => {
     setModalIsOpen(true);
@@ -20,7 +35,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="main">
         <Profile
           avatar={avatar}
           name={name}
@@ -29,16 +44,11 @@ function App() {
         />
         {/* <Cards /> */}
       </main>
-      <Modal isOpen={modalIsOpen}>
-        THIS IS MY MODAL!
-        <button
-          className="modal__close-button"
-          type="button"
-          onClick={() => setModalIsOpen(false)}
-        >
-          X
-        </button>
-      </Modal>
+      <EditProfileModal
+        isOpen={modalIsOpen}
+        afterSubmit={() => fetchUser()}
+        closeModal={() => setModalIsOpen(false)}
+      />
       <Modal isOpen={false}>
         <h1>Hidden modal</h1>
       </Modal>
