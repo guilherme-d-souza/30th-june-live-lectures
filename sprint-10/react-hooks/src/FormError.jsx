@@ -4,6 +4,8 @@ function FormError(props) {
   // no dependency variables -> after the first render
   // VERY USEFUL TO API CALLS
   // componentDidMount
+
+  // DOMLoadedContent
   useEffect(() => {
     console.log("This will be trigger only in the first render!");
 

@@ -11,6 +11,10 @@ function App() {
     setName(event.target.value);
   }
 
+  // Optional Chain
+  // const street = user.address !== undefined ? user.address.street : undefined;
+  // const street = user.address?.street;
+
   // useEffect -> also a hook
   // parameteres
   // first -> function trigger whenever any dependencies values changes
