@@ -1,0 +1,13 @@
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__title {
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  margin: 10px 0;
+}

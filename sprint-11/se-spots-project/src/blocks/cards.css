@@ -1,0 +1,29 @@
+.cards__list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 413px);
+}
+
+.card__item-image {
+  width: 100%;
+  height: 413px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card__item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__item-like-button {
+  appearance: none;
+  background-color: unset;
+  border: none;
+  padding: 0;
+}
+
+.card__item-like-icon-liked {
+  background-color: red;
+}
