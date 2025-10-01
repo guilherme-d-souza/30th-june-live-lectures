@@ -11,3 +11,19 @@
   font-size: 20px;
   margin: 10px 0;
 }
+
+/* .navbar-popup__list {
+  margin: 0;
+}
+
+.navbar-popup {
+  background-color: white;
+  height: 0px;
+  opacity: 0;
+  transition: height 3s ease-in-out;
+}
+
+.navbar-popup_is-open {
+  height: 100%;
+  opacity: 1;
+} */
