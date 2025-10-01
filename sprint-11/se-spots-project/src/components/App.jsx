@@ -1,58 +1,31 @@
 import "normalize.css";
 import "../blocks/App.css";
-import { useState, useEffect } from "react";
-import defaultAvatar from "../assets/default_avatar.png";
 import Header from "./Header";
-import Profile from "./Profile";
-import Modal from "./Modal";
-import { getUserInfo } from "../services/TripleTenAPI";
-import EditProfileModal from "./EditProfileModal";
-import Cards from "./Cards";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
+import Profile from "../pages/Profile";
 
+// ENTRYPOINT FOR THE ROUTE
 function App() {
-  //     variable, special function -> triggers the react render
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [avatar, setAvatar] = useState(defaultAvatar);
-  const [name, setName] = useState("Guilherme");
-  const [description, setDescription] = useState("Software Engineer");
-
-  async function fetchUser() {
-    const user = await getUserInfo();
-    setName(user.name);
-    setDescription(user.about);
-    setAvatar(user.avatar);
-  }
-
-  // useEffect
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  const handleOpenEditProfileModal = () => {
-    setModalIsOpen(true);
-  };
-
   return (
     <>
-      <Header />
-      <main className="main">
-        <Profile
-          avatar={avatar}
-          name={name}
-          description={description}
-          openModal={handleOpenEditProfileModal}
-        />
-        <Cards />
-      </main>
-      <EditProfileModal
-        isOpen={modalIsOpen}
-        afterSubmit={() => fetchUser()}
-        closeModal={() => setModalIsOpen(false)}
-      />
-      <Modal isOpen={false}>
-        <h1>Hidden modal</h1>
-      </Modal>
-      {/* <Footer /> */}
+      <BrowserRouter>
+        <Header />
+        <main className="main">
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/profile" Component={Profile}>
+              {/* <Route path="create" Component={CreateProfile} /> */}
+            </Route>
+            {/* everything that wasn`t defined before,
+                its NotFound
+             */}
+            <Route path="*" Component={NotFound} />
+          </Routes>
+        </main>
+        {/* <Footer /> */}
+      </BrowserRouter>
     </>
   );
 }
