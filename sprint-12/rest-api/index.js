@@ -1,6 +1,7 @@
 // 1. import express
 import express from "express";
 import cors from "cors";
+import fs from "fs";
 
 // 2. create the express app
 const application = express();
@@ -23,6 +24,7 @@ let userInfo = {
 // User routes
 // GET /users/me – Get the current user’s info
 application.get("/users/me", (_request, response) => {
+  // fs.readFile("userInfo.txt")
   response.send(userInfo);
 });
 
@@ -31,6 +33,7 @@ application.patch("/users/me", (request, response) => {
   const updateUser = request.body;
 
   // property by property to updates and create
+  // fs.writeFile("userInfo.txt")
   userInfo.name = updateUser.name;
   userInfo.about = updateUser.about;
 

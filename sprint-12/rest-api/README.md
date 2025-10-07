@@ -3,4 +3,4 @@
 // 3. call the listen function
 // 4. always remember to add the json middleware
 // 5. add CORS
-// 6. dd the routes/endpoints/paths
+// 6. add the routes/endpoints/paths
