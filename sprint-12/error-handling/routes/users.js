@@ -1,25 +1,7 @@
 import express from "express";
 import { getUserInfo, updateProfileInfo } from "../controllers/users.js";
-import { Collection } from "mongoose";
 
 const usersRouter = express.Router();
-
-const itemTypes = [
-  {
-    id: 1,
-    name: "Shoe",
-  },
-];
-
-const items = [
-  {
-    price: 100,
-    name: "Jordan",
-    collection: "Summer",
-    colors: ["red", "black"],
-    itemTypeId: 1,
-  },
-];
 
 // GET /users/me – Get the current user’s info
 usersRouter.get("/users/me", getUserInfo);
@@ -29,6 +11,7 @@ usersRouter.patch("/users/me", updateProfileInfo);
 
 // PATCH /users/me/avatar – Update avatar
 usersRouter.patch("/users/me/avatar", (request, response) => {
+  const a = b;
   return response.status(501).send("Waiting to finish the function");
 });
 
