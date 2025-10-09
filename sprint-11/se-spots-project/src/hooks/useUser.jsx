@@ -22,5 +22,5 @@ export default function useUser() {
   }, []);
 
   // 3. main idea - return the data
-  return { avatar, description, name };
+  return { user: { avatar, description, name }, fetchUser };
 }

@@ -1,5 +1,5 @@
 const apiConfig = {
-  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  baseUrl: "http://localhost:3001",
   headers: {
     authorization: "c4c228aa-5c4b-473b-949e-3dce2ec5deef",
     "Content-Type": "application/json",

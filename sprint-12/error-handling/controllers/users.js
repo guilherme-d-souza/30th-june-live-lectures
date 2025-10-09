@@ -18,6 +18,6 @@ export function updateProfileInfo(request, response) {
     user.about = updateUser.about;
     user.name = updateUser.name;
     user.save(); // this will persist the data on the database
-    return response.status(200).send("Update successfully!");
+    return response.status(200).send({ message: "Update successfully!" });
   });
 }

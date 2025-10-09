@@ -2,7 +2,11 @@ import React, { useRef, useState } from "react";
 import { updateUserInfo } from "../services/TripleTenAPI";
 import Modal from "./Modal";
 
-export default function EditProfileModal({ isOpen, closeModal, afterSubmit }) {
+export default function EditProfileModal({
+  isOpen,
+  closeModal,
+  afterSubmit = () => {},
+}) {
   const [buttonText, setButtonText] = useState("Save");
   const inputNameRef = useRef();
 

@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import connectToDatabase from "./database/connection.js";
 import usersRouter from "./routes/users.js";
+import cardsRouter from "./routes/cards.js";
+import errorHandler from "./middlewares/errorHandler.js";
+import notFoundRouteHandler from "./middlewares/notFoundRouteHandler.js";
 
 const app = express();
 const PORT = 3001;
@@ -15,24 +18,12 @@ app.use(cors());
 app.use(usersRouter);
 
 // Card routes
+app.use("/cards", cardsRouter);
 
-// GET /cards – Get all cards
-// POST /cards – Create a card
-// DELETE /cards/:cardId – Delete a card
-// PUT /cards/:cardId/likes – Like a card
-// DELETE /cards/:cardId/likes – Dislike a card
-
+// 404 handler - after all routes and middleware (only before the error handler)
+app.use(notFoundRouteHandler);
 // Error middleware - after all routes and middleware
-app.use((err, req, res, next) => {
-  // console.log("Error happen in ", req.originalUrl);
-  console.error(err); // LOGS!!! -> this is for developers
-  res
-    .status(500)
-    .send({ message: "Unexpected error! Please try again in a few minutes!" });
-  // DO NOT DO THAT
-  // HACKERS!!
-  //.send({ error: err.message });
-});
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log("API working in the port:", PORT);

@@ -11,7 +11,7 @@ function Header() {
       <header className="header">
         <img src={logoSvg} alt="Logo" />
         <h2 className="header__title">SPOTS</h2>
-        <Button />
+        {/* <Button /> */}
         {/* <h2
           className="navbar"
           onMouseEnter={() => setPopupOpen(true)}

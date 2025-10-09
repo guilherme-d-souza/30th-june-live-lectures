@@ -10,7 +10,7 @@ import useUser from "../hooks/useUser";
 function Home() {
   //     variable, special function -> triggers the react render
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const user = useUser();
+  const { user, fetchUser } = useUser();
 
   const handleOpenEditProfileModal = () => {
     setModalIsOpen(true);
