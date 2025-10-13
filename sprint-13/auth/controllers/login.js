@@ -1,5 +1,6 @@
 import UserModel from "../models/userModel.js";
 import { compareHash } from "../utils/passwordHash.js";
+import { createToken } from "../utils/token.js";
 
 export async function tokenLogin(request, response) {
   // const user = request.body;
@@ -26,5 +27,7 @@ export async function tokenLogin(request, response) {
   }
 
   // if it's all good
-  return response.status(200).json({ token: "REAL TOKEN -> JWT" });
+  return response
+    .status(200)
+    .json({ token: createToken(userFromDatabase._id) });
 }

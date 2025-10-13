@@ -9,9 +9,9 @@ export async function createUser(request, response) {
   };
 
   const userCreated = await UserModel.create({
-    name: user.name,
-    email: user.email,
-    password: createHash(user.password), //security measures
+    name: user.name.trim(),
+    email: user.email.trim(),
+    password: createHash(user.password.trim()), // security measures
   });
 
   return response.status(201).json({ message: "User created!" });
