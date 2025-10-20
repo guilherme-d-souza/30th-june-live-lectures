@@ -9,7 +9,8 @@ import { validateToken } from "../utils/token.js";
 // 2. if is not, send 401
 // 3. if is valid, go to the next function with the user information
 
-export const authMiddleware = (req, res, next) => {
+export const authMiddleware = async (req, res, next) => {
+  // thats the reason to the key on the frontend
   const { authorization } = req.headers;
 
   // const authorization = "Bearer LIKAHSD13NB123JB12HGBVBKJBN3HBUK1GB23KJ12BK3";
@@ -28,6 +29,13 @@ export const authMiddleware = (req, res, next) => {
     // st -> JWT
     // nd -> secret key
     payload = validateToken(token);
+    // added a extra validation to see if the user was deleted
+    const user = await UserModel.findById(payload.idBananas);
+    if (!user || user.isBlocked) {
+      return res
+        .status(401)
+        .send({ message: "Authorization required! User doesn't exists" });
+    }
   } catch (err) {
     console.error(err);
     // here the token was invalid
@@ -41,5 +49,6 @@ export const authMiddleware = (req, res, next) => {
   // create a property inside the request to have access to which
   // user is doing the action
   req.userCoconut = payload;
+
   next(); // next its used on the auth middleware when is successfull
 };

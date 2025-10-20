@@ -1,16 +1,20 @@
 import jwt from "jsonwebtoken";
+import CONFIG from "./config.js";
 
-const secretKey = "a_horse_runs_fast";
+// NEVER SHOULD BE ADDED DO THE FRONTEND
+// environment variables
+const secretKey = CONFIG.JWT_SECRET;
 
 export function createToken(userId) {
   // sign
   // st param -> payload -> user data
   // nd param -> secret-key -> e.g. a_horse_runs_fast
   // rd param -> options (obj) -> expiration date
-  //                                                               1 minute
+  //                                                              1 minute
   return jwt.sign({ idBananas: userId }, secretKey, { expiresIn: "1m" });
 }
 
+// HERE IS THE ONLY PLACE THAT KNOWSSSSSS HOW TO VALIDATE A TOKEN
 export function validateToken(token) {
   return jwt.verify(token, secretKey);
 }

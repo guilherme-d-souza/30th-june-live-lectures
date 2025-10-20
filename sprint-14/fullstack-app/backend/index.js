@@ -3,6 +3,7 @@ import cors from "cors";
 import usersRouter from "./routes/users.js";
 import loginRouter from "./routes/login.js";
 import connectToDatabase from "./database/connection.js";
+import CONFIG from "./utils/config.js";
 
 const app = express();
 
@@ -25,7 +26,7 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something broke!");
 });
 
-app.listen(3001, () => {
-  console.log("Server started at port: 3001");
+app.listen(CONFIG.PORT, () => {
+  console.log(`Server started at port: ${CONFIG.PORT}`);
   connectToDatabase();
 });
