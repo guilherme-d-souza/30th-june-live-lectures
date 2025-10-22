@@ -1,0 +1,12 @@
+.header-options {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 30px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+}

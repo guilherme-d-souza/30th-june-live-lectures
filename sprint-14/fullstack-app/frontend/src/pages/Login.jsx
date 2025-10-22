@@ -1,15 +1,19 @@
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
+import { useContext } from "react";
+import { LoggedInContext } from "../context/loggedInContext";
 
 function LoginPage() {
   const navigate = useNavigate();
+  const { setLoggedIn } = useContext(LoggedInContext);
 
   const handleLogin = async (formData) => {
     const email = formData.get("email");
     const password = formData.get("password");
     const token = await api.login({ email, password });
     if (token) {
+      setLoggedIn(true);
       navigate("/profile");
     } else {
       alert("Try again!");

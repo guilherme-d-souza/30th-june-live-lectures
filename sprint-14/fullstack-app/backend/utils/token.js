@@ -11,7 +11,7 @@ export function createToken(userId) {
   // nd param -> secret-key -> e.g. a_horse_runs_fast
   // rd param -> options (obj) -> expiration date
   //                                                              1 minute
-  return jwt.sign({ idBananas: userId }, secretKey, { expiresIn: "1m" });
+  return jwt.sign({ idBananas: userId }, secretKey, { expiresIn: "7d" });
 }
 
 // HERE IS THE ONLY PLACE THAT KNOWSSSSSS HOW TO VALIDATE A TOKEN

@@ -1,4 +1,5 @@
 import { validateToken } from "../utils/token.js";
+import UserModel from "../models/userModel.js";
 
 // middleware
 // req/request
@@ -31,7 +32,7 @@ export const authMiddleware = async (req, res, next) => {
     payload = validateToken(token);
     // added a extra validation to see if the user was deleted
     const user = await UserModel.findById(payload.idBananas);
-    if (!user || user.isBlocked) {
+    if (!user) {
       return res
         .status(401)
         .send({ message: "Authorization required! User doesn't exists" });

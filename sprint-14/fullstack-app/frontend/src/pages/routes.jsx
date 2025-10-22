@@ -1,19 +1,20 @@
 import { Navigate } from "react-router-dom";
 import { getToken } from "../utils/storage";
 import api from "../services/api";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
+import { LoggedInContext } from "../context/loggedInContext";
 
 const ProtectedRoute = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, setLoggedIn } = useContext(LoggedInContext);
 
   async function checkToken() {
     const token = getToken();
     // if the token is not valid?
     // right now, im only validating if token is there in the localStorage
     const isValid = await api.isValidToken(token);
-    setIsLoggedIn(isValid);
+    setLoggedIn(isValid);
     setLoading(false);
   }
 
@@ -26,7 +27,7 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!isLoggedIn) {
-    return <Navigate to="/"></Navigate>;
+    return <Navigate to="/login"></Navigate>;
   }
 
   return children;
