@@ -33,6 +33,10 @@ export const authMiddleware = async (req, res, next) => {
     // added a extra validation to see if the user was deleted
     const user = await UserModel.findById(payload.idBananas);
     if (!user) {
+      // return next(new UnauthorizedError({
+      //   statusCode: 401,
+      //   customMessage: "Authorization required! User doesn't exists",
+      // });
       return res
         .status(401)
         .send({ message: "Authorization required! User doesn't exists" });
